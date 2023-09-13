@@ -1,0 +1,121 @@
+# What will be the values of $a and $b after the code below is executed?
+Explain your answer.
+$a = '1';
+$b = &$a;
+$b = "2$b"; 
+
+-> $a = '1'; // $a is a variable type of string with the value '1';
+$b = &$a; // $b is the reference of the $a variable.
+$b = "2$b"; // $b & $a have for value the string '2' concatenate with the value of the variable $a (string '1')
+
+So, Answer is '21'.
+
+
+# How can you tell if a number is even or odd without using any Condition or
+loop?
+-> We can divide the number by 2, then check whether the remainder is 0 or not. if 0, then it is even.
+
+
+# How can you declare the array (all type) in PHP? Explain with example.Covert a JSON string to array?
+-> In PHP, the array() function is used to create an array:
+
+array();
+In PHP, there are three types of arrays:
+
+Indexed arrays - Arrays with a numeric index
+Associative arrays - Arrays with named keys
+Multidimensional arrays - Arrays containing one or more arrays
+
+Syntax for indexed arrays:
+
+array(value1, value2, value3, etc.)
+Syntax for associative arrays: 
+
+array(key=>value,key=>value,key=>value,etc.)
+=>Convert JSON to PHP Array
+This example has a JSON string that maps the animal with its count. The output of converting this JSON will return an associative array.
+#Example:-
+<?php
+// JSON string in PHP Array
+$jsonString = '{"Lion":101,"Tiger":102,"Crocodile":103,"Elephant":104}';
+$phpArray = json_decode($jsonString, true);
+
+// display the converted PHP array
+var_dump($phpArray);
+?>
+
+
+# Write program to remove duplicate values from array
+-> We can get the unique elements by using array_unique() function. This function will remove the duplicate values from the array.
+
+Syntax:
+
+array array_unique($array, $sort_flags)
+
+Return Value: The array_unique() function returns the filtered array after removing all duplicates from the array.
+
+Example: PHP program to remove duplicate values from the array.
+<?php
+
+// Input Array
+$a = array("red", "green", "red", "blue");
+
+// Array after removing duplicates
+print_r(array_unique($a));
+
+?>
+
+
+# Get random values from array 
+-> Use array_rand() function to get random value out of an array in PHP.
+Function: The array_rand() function is an inbuilt function in PHP which is used to fetch a random number of elements from an array. The element is a key and can return one or more than one key.
+
+Syntax: 
+
+array_rand( $array, $num )
+
+Example:
+<?php
+ 
+// Declare an associative array
+$arr = array( "a"=>"21", "b"=>"31", "c"=>"7", "d"=>"20" );
+ 
+// Use array_rand function to returns random key
+$key = array_rand($arr);
+ 
+// Display the random array element
+echo $arr[$key];
+ 
+?>
+
+
+# Write a PHP script which decodes the following JSON string.
+->
+<?php
+function w3rfunction($value,$key)
+{
+echo "$key : $value"."\n";
+}
+$a = '{"Title": "The Cuckoos Calling",
+"Author": "Robert Galbraith",
+"Detail":
+{ 
+"Publisher": "Little Brown"
+ }
+  }';
+$j1 = json_decode($a,true);
+array_walk_recursive($j1,"w3rfunction");
+?>
+
+
+# Use a for loop to total the contents of an integer array called numbers which has five elements. Store the result in an integer called total.
+
+->for( loop = 0, total = 0; loop < 5; loop++ )
+  total = total + numbers[loop];
+
+
+# Declare a Multi Dimensioned array of floats called balances having Three rows and five columns.
+-> float balances[3][5];
+
+
+
